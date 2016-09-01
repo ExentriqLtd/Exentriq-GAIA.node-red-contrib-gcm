@@ -1,0 +1,45 @@
+<script type="text/javascript">
+    RED.nodes.registerType('gcm',{
+        category: 'function',
+        color: '#D8BFD8',
+        defaults: {
+            name: {value:""},
+            key: {required:true},
+            action: {value:""},
+            title: {value:""}
+        },
+        inputs:1,
+        outputs:0,
+        icon: "android.png",
+        label: function() {
+            return this.name||"gcm";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="gcm">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+	<div class="form-row">
+        <label for="node-input-title"><i class="icon-tag"></i> Title</label>
+        <input type="text" id="node-input-title" placeholder="Title of the notification">
+    </div>
+	<div class="form-row">
+        <label for="node-input-key"><i class="fa fa-tag"></i> Key</label>
+        <input type="text" id="node-input-key" placeholder="sender api key">
+    </div>
+	<div class="form-row">
+        <label for="node-input-action"><i class="fa fa-tag"></i> Action</label>
+        <input type="text" id="node-input-action" placeholder="action associated with a user click on the notification">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="gcm">
+    <p>A node for interfacing with the Google Cloud Messaging service.</p>
+	<p><b>Title</b>  <i>The title of the notification. Us msg.title to set the title dynamically</i></p>
+    <p><b>Key</b>  <i>Google Cloud Messaging sender api key.</i></p>
+    <p><b>Action</b>  <i>Optional action associated with a user click on the notification.</i></p>
+	<p>The receiver of the notification in set in msg.topic. The message of the notification is set in msg.payload</p>
+</script>

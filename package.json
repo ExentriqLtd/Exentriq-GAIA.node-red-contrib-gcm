@@ -1,0 +1,16 @@
+{
+  "name": "node-red-contrib-gcm",
+  "version": "1.0.0",
+  "description": "Google Cloud Messaging node for Node-RED",
+  "author": "Calogero Crapanzano <calosan@libero.it>",
+  "keywords": [ "node-red" ],
+  "dependencies": {
+    "node-gcm": "^0.14.0",
+    "util": "*"
+  },
+  "node-red"     : {
+        "nodes": {
+            "gcm": "gcm.js"
+        }
+    }
+}
