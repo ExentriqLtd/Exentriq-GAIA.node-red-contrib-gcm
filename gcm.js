@@ -25,8 +25,12 @@ module.exports = function(RED) {
         		if (msg.hasOwnProperty('data')) {
         		    data = msg.data;
       			}
+        		
+        		var uuid = String(Math.floor((Math.random() * 100000) + 1));
+        		
         		data.title=title;
         		data.message = msg.payload;
+        		data.notId = uuid;
         		
         		var message = new gcm.Message({
     			  data: data
@@ -39,6 +43,9 @@ module.exports = function(RED) {
         		else{
         			regTokens.push(msg.topic);
         		}
+        		
+        		
+        		
         		        		
         		// Set up the sender with you API key
         		var sender = new gcm.Sender(config.key);
