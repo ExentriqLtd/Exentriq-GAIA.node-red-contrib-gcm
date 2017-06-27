@@ -31,6 +31,9 @@ module.exports = function(RED) {
         		data.title=title;
         		data.message = msg.payload;
         		data.notId = uuid;
+        		data.style='inbox';
+        		data.summaryText='There are %n% notifications';
+        		data.priority = 2;
         		
         		var message = new gcm.Message({
     			  data: data
