@@ -34,6 +34,9 @@ module.exports = function(RED) {
         		data.style='inbox';
         		data.summaryText='There are %n% notifications';
         		data.priority = 2;
+        		if(msg.badge){
+        		    data.badge = msg.badge;
+                        }
         		
         		var message = new gcm.Message({
     			  data: data
