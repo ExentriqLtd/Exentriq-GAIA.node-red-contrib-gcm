@@ -33,7 +33,7 @@ module.exports = function(RED) {
         		data.notId = uuid;
         		data.style='inbox';
         		data.summaryText='There are %n% notifications';
-        		data.priority = 2;
+        		data.priority = "2";
         		if(msg.badge){
         		    data.badge = msg.badge;
                         }
